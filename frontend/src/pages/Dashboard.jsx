@@ -92,9 +92,14 @@ const Dashboard = ({ onLogout }) => {
       <div className="max-w-4xl mx-auto p-6">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-extrabold tracking-wide cursor-pointer hover:text-blue-400 transition-colors">Task Manager</h1>
-          <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-full bg-gray-300 dark:bg-gray-700 transition-all hover:scale-110">
-            {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-gray-600" />}
-          </button>
+          <div className="flex gap-4 items-center">
+            <button onClick={onLogout} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-all">
+              Logout
+            </button>
+            <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-full bg-gray-300 dark:bg-gray-700 transition-all hover:scale-110">
+              {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-gray-600" />}
+            </button>
+          </div>
         </div>
 
         <div className="flex mb-4 gap-3">
